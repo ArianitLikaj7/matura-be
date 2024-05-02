@@ -2,12 +2,11 @@ package com.arianit.maturabe.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 import lombok.*;
+import org.hibernate.annotations.ColumnTransformer;
 
-import java.util.List;
 
 @Table(name = "tests")
 @Entity
@@ -24,7 +23,11 @@ public class Test extends BaseEntity {
     @Column(name = "number_of_test")
     private Long numberOfTest;
 
-    @Column(name = "question_answers")
+    @Column(name = "question_answers", columnDefinition = "json")
+    @ColumnTransformer(
+            read = "question_answers::json",
+            write = "CAST(? AS json)"
+    )
     private String questionsAnswers;
 
 }

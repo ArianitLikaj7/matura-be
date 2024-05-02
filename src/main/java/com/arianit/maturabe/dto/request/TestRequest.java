@@ -1,6 +1,6 @@
 package com.arianit.maturabe.dto.request;
 
-import com.arianit.maturabe.entity.QuestionAnswer;
+import com.arianit.maturabe.dto.CustomQuestionAnswerDto;
 import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
@@ -8,6 +8,6 @@ import java.util.List;
 public record TestRequest(
         @NotNull String nameOfTest,
         @NotNull  Long numberOfTest,
-        List<QuestionAnswer> questionAnswers
+        List<CustomQuestionAnswerDto> questionAnswers
 ) {
 }

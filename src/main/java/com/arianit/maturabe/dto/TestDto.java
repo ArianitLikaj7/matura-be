@@ -12,5 +12,5 @@ import java.util.List;
 public class TestDto {
     private Long id;
     private Long numberOfTest;
-    private List<QuestionAnswerDto> questionAnswerDtoList;
+    private List<CustomQuestionAnswerDto> questionAnswerDtoList;
 }
